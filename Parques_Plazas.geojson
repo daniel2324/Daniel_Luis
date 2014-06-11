@@ -1,0 +1,17 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "cat": 1, "Tipo": "Parque", "Nombre": "Montealondra" }, "geometry": { "type": "Point", "coordinates": [ -84.062254368089839, 9.957189488190464 ] } },
+{ "type": "Feature", "properties": { "cat": 2, "Tipo": "Parque", "Nombre": "Rimatol" }, "geometry": { "type": "Point", "coordinates": [ -84.058841047268047, 9.955462320746051 ] } },
+{ "type": "Feature", "properties": { "cat": 3, "Tipo": "Parque", "Nombre": "Agronomos" }, "geometry": { "type": "Point", "coordinates": [ -84.059785531845733, 9.958017836181325 ] } },
+{ "type": "Feature", "properties": { "cat": 4, "Tipo": "Parque", "Nombre": "IFAM" }, "geometry": { "type": "Point", "coordinates": [ -84.058224709784, 9.960573794434703 ] } },
+{ "type": "Feature", "properties": { "cat": 5, "Tipo": "Parque", "Nombre": "Los Colegios" }, "geometry": { "type": "Point", "coordinates": [ -84.055682999876709, 9.960106285787386 ] } },
+{ "type": "Feature", "properties": { "cat": 6, "Tipo": "Parque", "Nombre": "Moravia" }, "geometry": { "type": "Point", "coordinates": [ -84.049220253344814, 9.961763094748058 ] } },
+{ "type": "Feature", "properties": { "cat": 7, "Tipo": "Parque", "Nombre": "Los Robles" }, "geometry": { "type": "Point", "coordinates": [ -84.049729104807625, 9.965218589947492 ] } },
+{ "type": "Feature", "properties": { "cat": 8, "Tipo": "Parque", "Nombre": "Recreativo Norte" }, "geometry": { "type": "Point", "coordinates": [ -84.057861917830792, 9.96226564720299 ] } },
+{ "type": "Feature", "properties": { "cat": 9, "Tipo": "Plaza", "Nombre": "Trinidad" }, "geometry": { "type": "Point", "coordinates": [ -84.027000926755818, 9.984514794757976 ] } },
+{ "type": "Feature", "properties": { "cat": 10, "Tipo": "Plaza", "Nombre": "Liceo Moravia" }, "geometry": { "type": "Point", "coordinates": [ -84.045226782949442, 9.965651176281821 ] } }
+]
+}

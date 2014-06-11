@@ -1,0 +1,30 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "01" }, "geometry": { "type": "Point", "coordinates": [ -84.025512486054438, 9.988852368070262 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "02" }, "geometry": { "type": "Point", "coordinates": [ -84.025276707176971, 9.992091979060405 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "03" }, "geometry": { "type": "Point", "coordinates": [ -84.027527439955776, 9.984442760716231 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "04" }, "geometry": { "type": "Point", "coordinates": [ -84.029760443797471, 9.982642794264526 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "05" }, "geometry": { "type": "Point", "coordinates": [ -84.031920283539719, 9.975533483122888 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "06" }, "geometry": { "type": "Point", "coordinates": [ -84.034461325475334, 9.968820066875697 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "07" }, "geometry": { "type": "Point", "coordinates": [ -84.036530723074364, 9.966408146777077 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "08" }, "geometry": { "type": "Point", "coordinates": [ -84.042140145437159, 9.963131893039165 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "09" }, "geometry": { "type": "Point", "coordinates": [ -84.045317174256027, 9.962879508441025 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "10" }, "geometry": { "type": "Point", "coordinates": [ -84.046787553468718, 9.961853433118513 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "11" }, "geometry": { "type": "Point", "coordinates": [ -84.047259145124343, 9.958883735140752 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "12" }, "geometry": { "type": "Point", "coordinates": [ -84.048257294125719, 9.95654388241088 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "13" }, "geometry": { "type": "Point", "coordinates": [ -84.04889340672824, 9.961331196366439 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "14" }, "geometry": { "type": "Point", "coordinates": [ -84.04856672601791, 9.962015159104386 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "15" }, "geometry": { "type": "Point", "coordinates": [ -84.04965604472909, 9.962302963207335 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "16" }, "geometry": { "type": "Point", "coordinates": [ -84.051598638001977, 9.962626628567843 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "17" }, "geometry": { "type": "Point", "coordinates": [ -84.057316036178847, 9.955138625832859 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "18" }, "geometry": { "type": "Point", "coordinates": [ -84.060403571320109, 9.962319190605442 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "19" }, "geometry": { "type": "Point", "coordinates": [ -84.054974854698941, 9.95938649240833 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "20" }, "geometry": { "type": "Point", "coordinates": [ -84.054775287949269, 9.960178426880306 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "21" }, "geometry": { "type": "Point", "coordinates": [ -84.051869919779222, 9.956057401529991 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "22" }, "geometry": { "type": "Point", "coordinates": [ -84.055083144536852, 9.955588945465216 ] } },
+{ "type": "Feature", "properties": { "Tipo": "Telefono Publico", "Nombre": "23" }, "geometry": { "type": "Point", "coordinates": [ -84.055155519762408, 9.954149111844529 ] } }
+]
+}

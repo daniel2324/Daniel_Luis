@@ -1,0 +1,542 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Mapa Moravia</title>
+<link rel="stylesheet"
+href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css"/>
+<script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+<style type="text/css">
+#map { width: 1000px; height: 650px }
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script type="text/javascript">
+
+<!--Coordenadas del cantón de Moravia-->
+latlng = new L.LatLng(10.011111, -84.011111)
+
+<!--PUNTO 4-->
+<!--Funciones para mostrar el nombre de cada objeto-->
+<!--de cada una de las capas-->
+function mostrarNombre(feature, layer) {
+layer.bindPopup("<b>Nombre: </b>" + feature.properties.Nombre);
+};
+
+function mostrarNombreRios(feature, layer) {
+layer.bindPopup("<b>Río: </b>" + feature.properties.NOMBRE);
+};
+
+function mostrarNombreQuebradas(feature, layer) {
+layer.bindPopup("<b>Quebrada: </b>" + feature.properties.NOMBRE);
+};
+
+function mostrarNombreCalles(feature, layer) {
+layer.bindPopup("<b>Calle: </b>" + feature.properties.RUTA);
+};
+
+function mostrarNombreCanton(feature, layer) {
+layer.bindPopup(feature.properties.NCANTON);
+};
+
+function mostrarNombreDistrito(feature, layer) {
+layer.bindPopup("<b>Distrito: </b>" + feature.properties.NDISTRITO + "<br /></b>" +
+ "<b />Cantón: </b>" + feature.properties.NCANTON + "<br /></b>" +
+ "<b />Provincia: </b>" +  feature.properties.PROVINCIA);
+};
+
+function mostrarNombreEscuelas(feature, layer) {
+layer.bindPopup("<b>Colegio: </b>" + feature.properties.Nombre + "<br /></b>" +
+"<b />Distrito: </b>" + feature.properties.Distrito + "<br /></b>" + 
+"<b />Plaza más cercana: </b><br />Plaza </b>" +  feature.properties.Plaza);
+};
+
+function mostrarNombreBancos(feature, layer) {
+layer.bindPopup("<b>Banco: </b>" + feature.properties.Nombre + "<br /></b>" +
+"<b />Restaurante más cercano: </b>" + feature.properties.Restaurant);
+};
+
+function mostrarNombreParadas(feature, layer) {
+layer.bindPopup("<b>Parada: </b>" + feature.properties.Nombre + "<br /></b>" +
+"<b />Teléfono más cercano: </b>" + feature.properties.Telefono);
+};
+
+function mostrarNombreComercios(feature, layer) {
+layer.bindPopup("<b>Comercio: </b>" + feature.properties.Nombre + "<br /></b>" +
+"<b />Localidad: </b>" + feature.properties.Localidad);
+};
+
+function mostrarNombrePoblados(feature, layer) {
+layer.bindPopup("<b>Poblado: </b>" + feature.properties.NOMBRE + "<br /></b>" +
+"<b />Distrito: </b>" + feature.properties.Distrito);
+};
+
+function mostrarNombrePuentes(feature, layer) {
+layer.bindPopup("<b>Puente: </b>" + feature.properties.Nombre + "<br /></b>" +
+"<b />Distrito: </b>" + feature.properties.Distrito);
+};
+
+function mostrarNombreIglesias(feature, layer) {
+layer.bindPopup("<b>Iglesia: </b>" + feature.properties.Nombre + "<br /></b>" +
+"<b />Distrito: </b>" + feature.properties.Distrito);
+};
+
+function mostrarNombreThiessen(feature, layer) {
+layer.bindPopup("<b>Localidad: </b>" + feature.properties.NOMBRE + "<br /></b>" +
+"<b />Distrito: </b>" + feature.properties.Distrito);
+};
+
+
+<!--PUNTO 5-->
+<!--Funciones para asignar una imagen diferente a cada capa de puntos-->
+<!--Icono de poblados-->
+var imagePoblados = L.icon({
+    iconUrl: 'imgs/houses.png',
+    iconSize: [15,15],
+    iconAnchor: [0, 0]
+});
+function iconoPoblados(feature, latlng) {
+return L.marker(latlng, {icon: imagePoblados});
+};
+
+<!--Icono de puentes-->
+var imagePuentes = L.icon({
+    iconUrl: 'imgs/bridge.png',
+    iconSize: [15,15],
+    iconAnchor: [0, 0]
+});
+function iconoPuentes(feature, latlng) {
+return L.marker(latlng, {icon: imagePuentes});
+};
+
+<!--Icono de bancos-->
+var imageBancos = L.icon({
+    iconUrl: 'imgs/bank.png',
+    iconSize: [13,13],
+    iconAnchor: [0, 0]
+});
+function iconoBancos(feature, latlng) {
+return L.marker(latlng, {icon: imageBancos});
+};
+
+<!--Icono de escuelas-->
+var imageEscuelas = L.icon({
+    iconUrl: 'imgs/school.png',
+    iconSize: [16,16],
+    iconAnchor: [0, 0]
+});
+function iconoEscuelas(feature, latlng) {
+return L.marker(latlng, {icon: imageEscuelas});
+};
+
+<!--Icono de iglesias-->
+var imageIglesias = L.icon({
+    iconUrl: 'imgs/church.png',
+    iconSize: [16,16],
+    iconAnchor: [0, 0]
+});
+function iconoIglesias(feature, latlng) {
+return L.marker(latlng, {icon: imageIglesias});
+};
+
+<!--Icono de paradas de buses-->
+var imageBus = L.icon({
+    iconUrl: 'imgs/bus_stop.png',
+    iconSize: [15,15],
+    iconAnchor: [0, 0]
+});
+
+function iconoBus(feature, latlng) {
+return L.marker(latlng, {icon: imageBus});
+};
+
+<!--Icono de parques y plazas-->
+var imageParque = L.icon({
+    iconUrl: 'imgs/park.png',
+    iconSize: [16,16],
+    iconAnchor: [0, 0]
+});
+function iconoParque(feature, latlng) {
+return L.marker(latlng, {icon: imageParque});
+};
+
+<!--Icono de restaurantes-->
+var imageRestaurante = L.icon({
+    iconUrl: 'imgs/restaurant.png',
+    iconSize: [16,16],
+    iconAnchor: [0, 0]
+});
+function iconoRestaurante(feature, latlng) {
+return L.marker(latlng, {icon: imageRestaurante});
+};
+
+<!--Icono de teléfonos públicos-->
+var imageTelefonoPublico = L.icon({
+    iconUrl: 'imgs/phone.png',
+    iconSize: [15,15],
+    iconAnchor: [0, 0]
+});
+function iconoTelefonoPublico(feature, latlng) {
+return L.marker(latlng, {icon: imageTelefonoPublico});
+};
+
+<!--Icono de comercios-->
+var imageComercio = L.icon({
+    iconUrl: 'imgs/store.png',
+    iconSize: [15,15],
+    iconAnchor: [0, 0]
+});
+function iconoComercio(feature, latlng) {
+return L.marker(latlng, {icon: imageComercio});
+};
+
+<!--Carga cada una de las capas-->
+
+var xhr = new XMLHttpRequest() || new ActiveXObject("Msxml2.XMLHTTP")
+|| new ActiveXObject("Microsoft.XMLHTTP");
+
+<!--Carga capa de cantones-->
+xhr.open("GET","Cantones.geojson",false); xhr.send(null);
+var CantonPoligonos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de distritos-->
+xhr.open("GET","Distritos.geojson",false); xhr.send(null);
+var DistritosPoligonos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de edificios-->
+xhr.open("GET","Edificios.geojson",false); xhr.send(null);
+var EdificiosPoligonos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de instalaciones-->
+xhr.open("GET","Instalaciones.geojson",false); xhr.send(null);
+var InstalacionesPoligonos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de calles-->
+xhr.open("GET","Calles.geojson",false); xhr.send(null);
+var CallesLineas = JSON.parse(xhr.responseText);
+
+<!--Carga capa de calles principales-->
+xhr.open("GET","CallesPrincipales.geojson",false); xhr.send(null);
+var CallesPrincipalesLineas = JSON.parse(xhr.responseText);
+
+<!--Carga capa de calles secundarias-->
+xhr.open("GET","CallesSecundarias.geojson",false); xhr.send(null);
+var CallesSecundariasLineas = JSON.parse(xhr.responseText);
+
+<!--Carga capa de ríos y quebradas-->
+xhr.open("GET","Rios_Quebradas.geojson",false); xhr.send(null);
+var RiosQuebradasLineas = JSON.parse(xhr.responseText);
+
+<!--Carga capa de ríos-->
+xhr.open("GET","Rios.geojson",false); xhr.send(null);
+var RiosLineas = JSON.parse(xhr.responseText);
+
+<!--Carga capa de quebradas-->
+xhr.open("GET","Quebradas.geojson",false); xhr.send(null);
+var QuebradasLineas = JSON.parse(xhr.responseText);
+
+<!--Carga capa de puentes-->
+xhr.open("GET","Puentes.geojson",false); xhr.send(null);
+var PuentesPuntos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de bancos-->
+xhr.open("GET","Bancos.geojson",false); xhr.send(null);
+var BancosPuntos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de comercios-->
+xhr.open("GET","Comercios.geojson",false); xhr.send(null);
+var ComerciosPuntos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de escuelas y colegios-->
+xhr.open("GET","Escuelas_Colegios.geojson",false); xhr.send(null);
+var Escuelas_ColegiosPuntos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de iglesias-->
+xhr.open("GET","Iglesias.geojson",false); xhr.send(null);
+var IglesiasPuntos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de paradas de buses-->
+xhr.open("GET","ParadasBuses.geojson",false); xhr.send(null);
+var ParadasBusesPuntos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de parques y plazas-->
+xhr.open("GET","Parques_Plazas.geojson",false); xhr.send(null);
+var Parques_PlazasPuntos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de poblados-->
+xhr.open("GET","Poblados.geojson",false); xhr.send(null);
+var PobladosPuntos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de restaurantes-->
+xhr.open("GET","Restaurantes.geojson",false); xhr.send(null);
+var RestaurantesPuntos = JSON.parse(xhr.responseText);
+
+<!--Carga capa de teléfonos públicos-->
+xhr.open("GET","TelefonosPublicos.geojson",false); xhr.send(null);
+var TelefonosPublicosPuntos = JSON.parse(xhr.responseText);
+
+<!--Relaciones-->
+xhr.open("GET","PlazasCercanas_Escuelas.geojson",false); xhr.send(null);
+var EscuelasPlazasLineas = JSON.parse(xhr.responseText);
+
+xhr.open("GET","RestaurantesCercanos_Bancos.geojson",false); xhr.send(null);
+var BancosRestaurantesLineas = JSON.parse(xhr.responseText);
+
+xhr.open("GET","TelefonosCercanos_Paradas.geojson",false); xhr.send(null);
+var ParadasTelefonosLineas = JSON.parse(xhr.responseText);
+
+<!--Thiessen-->
+xhr.open("GET","ThiessenSanJeronimo.geojson",false); xhr.send(null);
+var ThiessenSanJeronimoPoligonos = JSON.parse(xhr.responseText);
+
+xhr.open("GET","ThiessenSanVicente.geojson",false); xhr.send(null);
+var ThiessenSanVicentePoligonos = JSON.parse(xhr.responseText);
+
+xhr.open("GET","ThiessenTrinidad.geojson",false); xhr.send(null);
+var ThiessenTrinidadPoligonos = JSON.parse(xhr.responseText);
+
+<!--Buffers-->
+xhr.open("GET","BufferCallesPrincipales.geojson",false); xhr.send(null);
+var BufferCallesPrincipalesLineas = JSON.parse(xhr.responseText);
+
+xhr.open("GET","BufferCallesSecundarias.geojson",false); xhr.send(null);
+var BufferCallesSecundariasLineas = JSON.parse(xhr.responseText);
+
+xhr.open("GET","BufferRios.geojson",false); xhr.send(null);
+var BufferRiosLineas = JSON.parse(xhr.responseText);
+
+xhr.open("GET","BufferQuebradas.geojson",false); xhr.send(null);
+var BufferQuebradasLineas = JSON.parse(xhr.responseText);
+
+
+
+<!--Se generan los estilos de las capas de línea y políginos-->
+<!--Capa de edificios e instalaciones-->
+var stylePoligonos = {
+"color": "#FFFF00",
+"weight": 1,
+"opacity": 0.9
+};
+
+var stylePoligonosThiessen = {
+"color": "#81F7F3",
+"weight": 1,
+"opacity": 0.9
+};
+
+<!--Capa de distritos-->
+var styleCantonesYDistritos = {
+"color": "#0B6121",
+"weight": 1,
+"opacity": 0.65
+};
+
+<!--Capa de calles primarias y secundarias-->
+var styleCalles = {
+"color": "#000000",
+"weight": 1,
+"opacity": 0.65
+};
+
+<!--Capa de ríos y quebradas-->
+var styleRiosQuebradas = {
+"color": "#0101DF",
+"weight": 1,
+"opacity": 0.65
+};
+
+
+<!--Capas de relaciones-->
+var styleRelacionesEscuelasPlazas = {
+"color": "#FF0000",
+"weight": 3,
+"opacity": 2
+};
+
+var styleRelacionesBancosRestaurantes = {
+"color": "#0000FF",
+"weight": 3,
+"opacity": 2
+};
+
+var styleRelacionesParadasTelefonos = {
+"color": "#01DFD7",
+"weight": 3,
+"opacity": 2
+};
+
+var styleBufferCalles = {
+"color": "#A4A4A4"
+};
+
+var styleBufferRios = {
+"color": "#2E2EFE"
+};
+
+
+var CantonesLayer = L.geoJson(CantonPoligonos, {
+style: styleCantonesYDistritos, onEachFeature: mostrarNombreCanton
+});
+var DistritosLayer = L.geoJson(DistritosPoligonos, {
+style: styleCantonesYDistritos, onEachFeature: mostrarNombreDistrito
+});
+
+
+var EdificiosLayer = L.geoJson(EdificiosPoligonos, {
+style: stylePoligonos, onEachFeature: mostrarNombre
+});
+var InstalacionesLayer = L.geoJson(InstalacionesPoligonos, {
+style: stylePoligonos, onEachFeature: mostrarNombre
+});
+
+
+var ThiessenSanJeronimoLayer = L.geoJson(ThiessenSanJeronimoPoligonos, {
+style: stylePoligonosThiessen, onEachFeature: mostrarNombreThiessen
+});
+var ThiessenSanVicenteLayer = L.geoJson(ThiessenSanVicentePoligonos, {
+style: stylePoligonosThiessen, onEachFeature: mostrarNombreThiessen
+});
+var ThiessenTrinidadLayer = L.geoJson(ThiessenTrinidadPoligonos, {
+style: stylePoligonosThiessen, onEachFeature: mostrarNombreThiessen
+});
+
+
+var CallesLayer = L.geoJson(CallesLineas, {
+style: styleCalles, onEachFeature: mostrarNombreCalles
+});
+var CallesPrincipalesLayer = L.geoJson(CallesPrincipalesLineas, {
+style: styleCalles, onEachFeature: mostrarNombreCalles
+});
+var CallesSecundariasLayer = L.geoJson(CallesSecundariasLineas, {
+style: styleCalles, onEachFeature: mostrarNombreCalles
+});
+
+var BufferCallesPrincipalesLayer = L.geoJson(BufferCallesPrincipalesLineas, {
+style: styleBufferCalles, onEachFeature: mostrarNombreCalles
+});
+var BufferCallesSecundariasLayer = L.geoJson(BufferCallesSecundariasLineas, {
+style: styleBufferCalles, onEachFeature: mostrarNombreCalles
+});
+
+var RiosQuebradasLayer = L.geoJson(RiosQuebradasLineas, {
+style: styleRiosQuebradas, onEachFeature: mostrarNombreRios
+});
+var RiosLayer = L.geoJson(RiosLineas, {
+style: styleRiosQuebradas, onEachFeature: mostrarNombreRios
+});
+var QuebradasLayer = L.geoJson(QuebradasLineas, {
+style: styleRiosQuebradas, onEachFeature: mostrarNombreQuebradas
+});
+
+var BufferRiosLayer = L.geoJson(BufferRiosLineas, {
+style: styleBufferRios, onEachFeature: mostrarNombreRios
+});
+var BufferQuebradasLayer = L.geoJson(BufferQuebradasLineas, {
+style: styleBufferRios, onEachFeature: mostrarNombreQuebradas
+});
+
+var EscuelasPlazasLayer = L.geoJson(EscuelasPlazasLineas, {
+style: styleRelacionesEscuelasPlazas
+});
+
+var BancosRestaurantesLayer = L.geoJson(BancosRestaurantesLineas, {
+style: styleRelacionesBancosRestaurantes
+});
+
+var ParadasTelefonosLayer = L.geoJson(ParadasTelefonosLineas, {
+style: styleRelacionesParadasTelefonos
+});
+
+
+var PuentesLayer = L.geoJson(PuentesPuntos, {
+pointToLayer: iconoPuentes, onEachFeature: mostrarNombrePuentes
+});
+
+var BancosLayer = L.geoJson(BancosPuntos, {
+pointToLayer: iconoBancos, onEachFeature: mostrarNombreBancos
+});
+
+var ComerciosLayer = L.geoJson(ComerciosPuntos, {
+pointToLayer: iconoComercio, onEachFeature: mostrarNombreComercios
+});
+
+var Escuelas_ColegiosLayer = L.geoJson(Escuelas_ColegiosPuntos, {
+pointToLayer: iconoEscuelas, onEachFeature: mostrarNombreEscuelas
+});
+
+var IglesiasLayer = L.geoJson(IglesiasPuntos, {
+pointToLayer: iconoIglesias, onEachFeature: mostrarNombreIglesias
+});
+
+var ParadasBusesLayer = L.geoJson(ParadasBusesPuntos, {
+pointToLayer: iconoBus, onEachFeature: mostrarNombreParadas
+});
+
+var Parques_PlazasLayer = L.geoJson(Parques_PlazasPuntos, {
+pointToLayer: iconoParque, onEachFeature: mostrarNombre
+});
+
+var PobladosLayer = L.geoJson(PobladosPuntos, {
+pointToLayer: iconoPoblados, onEachFeature: mostrarNombrePoblados
+});
+
+var RestaurantesLayer = L.geoJson(RestaurantesPuntos, {
+pointToLayer: iconoRestaurante, onEachFeature: mostrarNombre
+});
+
+var TelefonosPublicosLayer = L.geoJson(TelefonosPublicosPuntos, {
+pointToLayer: iconoTelefonoPublico, onEachFeature: mostrarNombre
+});
+
+
+var map = L.map("map", {
+center: latlng,
+zoom: 12.5,
+layers: [CantonesLayer, DistritosLayer, EdificiosLayer, InstalacionesLayer, CallesLayer, CallesPrincipalesLayer, CallesSecundariasLayer, 
+RiosQuebradasLayer, RiosLayer, QuebradasLayer, PuentesLayer, BancosLayer, ComerciosLayer, Escuelas_ColegiosLayer, IglesiasLayer, ParadasBusesLayer, 
+Parques_PlazasLayer, PobladosLayer, RestaurantesLayer, TelefonosPublicosLayer, EscuelasPlazasLayer, BancosRestaurantesLayer, ParadasTelefonosLayer,
+ThiessenSanJeronimoLayer, ThiessenSanVicenteLayer, ThiessenTrinidadLayer, BufferCallesPrincipalesLayer, BufferCallesSecundariasLayer, 
+BufferRiosLayer, BufferQuebradasLayer]
+});
+
+
+var overlayMaps = {
+"<img src='https://cdn1.iconfinder.com/data/icons/prettyoffice9/256/pentagon.png' height=13> Cantones": CantonesLayer,
+"<img src='https://cdn1.iconfinder.com/data/icons/prettyoffice9/256/pentagon.png' height=13> Distritos": DistritosLayer,
+"<img src='https://cdn1.iconfinder.com/data/icons/prettyoffice9/256/pentagon.png' height=13> Edificios": EdificiosLayer,
+"<img src='https://cdn1.iconfinder.com/data/icons/prettyoffice9/256/pentagon.png' height=13> Instalaciones": InstalacionesLayer,
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Calles": CallesLayer,
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Calles Principales": CallesPrincipalesLayer,
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Calles Secundarias": CallesSecundariasLayer,
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Ríos y Quebradas": RiosQuebradasLayer,
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Ríos": RiosLayer,
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Quebradas": QuebradasLayer,
+"<img src='https://cdn0.iconfinder.com/data/icons/3D-shapes-psd/128/ball-1x1.png' height=13> Puentes": PuentesLayer,
+"<img src='https://cdn0.iconfinder.com/data/icons/3D-shapes-psd/128/ball-1x1.png' height=13> Bancos": BancosLayer,
+"<img src='https://cdn0.iconfinder.com/data/icons/3D-shapes-psd/128/ball-1x1.png' height=13> Comercios": ComerciosLayer,
+"<img src='https://cdn0.iconfinder.com/data/icons/3D-shapes-psd/128/ball-1x1.png' height=13> Escuelas y Colegios": Escuelas_ColegiosLayer, 
+"<img src='https://cdn0.iconfinder.com/data/icons/3D-shapes-psd/128/ball-1x1.png' height=13> Iglesias": IglesiasLayer,
+"<img src='https://cdn0.iconfinder.com/data/icons/3D-shapes-psd/128/ball-1x1.png' height=13> Paradas de Buses": ParadasBusesLayer,
+"<img src='https://cdn0.iconfinder.com/data/icons/3D-shapes-psd/128/ball-1x1.png' height=13> Parques y Plazas": Parques_PlazasLayer,
+"<img src='https://cdn0.iconfinder.com/data/icons/3D-shapes-psd/128/ball-1x1.png' height=13> Poblados": PobladosLayer,
+"<img src='https://cdn0.iconfinder.com/data/icons/3D-shapes-psd/128/ball-1x1.png' height=13> Restaurantes": RestaurantesLayer,
+"<img src='https://cdn0.iconfinder.com/data/icons/3D-shapes-psd/128/ball-1x1.png' height=13> Teléfonos Públicos": TelefonosPublicosLayer, 
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Plazas Cercanas": EscuelasPlazasLayer, 
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Restaurantes Cercanos": BancosRestaurantesLayer, 
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Teléfonos Cercanos": ParadasTelefonosLayer,
+"<img src='https://cdn1.iconfinder.com/data/icons/prettyoffice9/256/pentagon.png' height=13> Thiessen San Jeronimo": ThiessenSanJeronimoLayer, 
+"<img src='https://cdn1.iconfinder.com/data/icons/prettyoffice9/256/pentagon.png' height=13> Thiessen San Vicente": ThiessenSanVicenteLayer, 
+"<img src='https://cdn1.iconfinder.com/data/icons/prettyoffice9/256/pentagon.png' height=13> Thiessen Trinidad": ThiessenTrinidadLayer, 
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Buffer Calles Principales": BufferCallesPrincipalesLayer,
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Buffer Calles Secundarias": BufferCallesSecundariasLayer,
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Buffer Ríos": BufferRiosLayer,
+"<img src='http://www.clker.com/cliparts/0/f/3/2/1194994615287196054line.svg.hi.png' height=13> Buffer Quebradas": BufferQuebradasLayer
+};
+
+
+<!--PUNTO 3-->
+L.control.layers(null, overlayMaps).addTo(map);
+L.control.scale().addTo(map);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "cat": 1, "Tipo": "Colegio", "Nombre": "Colegio Sion", "Distrito": "San Vicente", "Plaza": "Rimatol" }, "geometry": { "type": "Point", "coordinates": [ -84.056894046400899, 9.957499032255432 ] } },
+{ "type": "Feature", "properties": { "cat": 2, "Tipo": "Colegio", "Nombre": "Colegio Saint Francis", "Distrito": "San Vicente", "Plaza": "Los Colegios" }, "geometry": { "type": "Point", "coordinates": [ -84.053919370529684, 9.960252363641471 ] } },
+{ "type": "Feature", "properties": { "cat": 3, "Tipo": "Colegio", "Nombre": "Colegio Contadores Publicos", "Distrito": "San Vicente", "Plaza": "Rimatol" }, "geometry": { "type": "Point", "coordinates": [ -84.060513341324352, 9.955089662979137 ] } },
+{ "type": "Feature", "properties": { "cat": 4, "Tipo": "Colegio", "Nombre": "Colegio Farmaceuticos", "Distrito": "San Vicente", "Plaza": "Montealondra" }, "geometry": { "type": "Point", "coordinates": [ -84.061257181899038, 9.955433632323087 ] } },
+{ "type": "Feature", "properties": { "cat": 5, "Tipo": "Colegio", "Nombre": "Colegio Saint Anthony", "Distrito": "San Vicente", "Plaza": "Montealondra" }, "geometry": { "type": "Point", "coordinates": [ -84.064529869031148, 9.955777121396441 ] } },
+{ "type": "Feature", "properties": { "cat": 6, "Tipo": "Colegio", "Nombre": "Colegio Ingenieros Agronomos", "Distrito": "San Vicente", "Plaza": "Agronomos" }, "geometry": { "type": "Point", "coordinates": [ -84.059919046453302, 9.959071553972864 ] } },
+{ "type": "Feature", "properties": { "cat": 7, "Tipo": "Colegio", "Nombre": "Colegio Oasis", "Distrito": "San Vicente", "Plaza": "Liceo Moravia" }, "geometry": { "type": "Point", "coordinates": [ -84.045440803577122, 9.964726985986525 ] } },
+{ "type": "Feature", "properties": { "cat": 8, "Tipo": "Colegio", "Nombre": "Liceo de Moravia", "Distrito": "San Vicente", "Plaza": "Liceo Moravia" }, "geometry": { "type": "Point", "coordinates": [ -84.046135271108156, 9.966545729816245 ] } },
+{ "type": "Feature", "properties": { "cat": 9, "Tipo": "Colegio", "Nombre": "Liceo Laboratorio Emma Gamboa", "Distrito": "San Vicente", "Plaza": "Los Robles" }, "geometry": { "type": "Point", "coordinates": [ -84.054118467614728, 9.964824008266609 ] } },
+{ "type": "Feature", "properties": { "cat": 10, "Tipo": "Colegio", "Nombre": "Colegio Maria Imaculada", "Distrito": "San Vicente", "Plaza": "Moravia" }, "geometry": { "type": "Point", "coordinates": [ -84.04588638187775, 9.959712827228504 ] } },
+{ "type": "Feature", "properties": { "cat": 11, "Tipo": "Colegio", "Nombre": "Central Valley Spanish School", "Distrito": "San Vicente", "Plaza": "Moravia" }, "geometry": { "type": "Point", "coordinates": [ -84.048267064097786, 9.963546801958174 ] } },
+{ "type": "Feature", "properties": { "cat": 12, "Tipo": "Colegio", "Nombre": "Colegio Albelardo Bonilla", "Distrito": "San Jeronimo", "Plaza": "Trinidad" }, "geometry": { "type": "Point", "coordinates": [ -84.024170278909295, 9.993388190196416 ] } },
+{ "type": "Feature", "properties": { "cat": 13, "Tipo": "Colegio", "Nombre": "Liceo Experimental Bilingue", "Distrito": "Trinidad", "Plaza": "Trinidad" }, "geometry": { "type": "Point", "coordinates": [ -84.025359870565012, 9.98576865020752 ] } },
+{ "type": "Feature", "properties": { "cat": 14, "Tipo": "Colegio", "Nombre": "Hernan Zamora", "Distrito": "Trinidad", "Plaza": "Trinidad" }, "geometry": { "type": "Point", "coordinates": [ -84.022830618292716, 9.98326178689274 ] } },
+{ "type": "Feature", "properties": { "cat": 15, "Tipo": "Escuela", "Nombre": "Escuela Japonesa", "Distrito": "San Vicente", "Plaza": "Rimatol" }, "geometry": { "type": "Point", "coordinates": [ -84.059819293188909, 9.955876313189823 ] } },
+{ "type": "Feature", "properties": { "cat": 16, "Tipo": "Escuela", "Nombre": "Escuela Porfirio Brenes", "Distrito": "San Vicente", "Plaza": "Moravia" }, "geometry": { "type": "Point", "coordinates": [ -84.04920880013259, 9.960842984464309 ] } },
+{ "type": "Feature", "properties": { "cat": 17, "Tipo": "Escuela", "Nombre": "Kinder Mis Primeros Pasos", "Distrito": "San Vicente", "Plaza": "Los Colegios" }, "geometry": { "type": "Point", "coordinates": [ -84.055258362990301, 9.961284459098737 ] } },
+{ "type": "Feature", "properties": { "cat": 18, "Tipo": "Escuela", "Nombre": "San Blas", "Distrito": "San Vicente", "Plaza": "Liceo Moravia" }, "geometry": { "type": "Point", "coordinates": [ -84.037011242719757, 9.966104445357543 ] } },
+{ "type": "Feature", "properties": { "cat": 19, "Tipo": "Escuela", "Nombre": "Escuela Platanares", "Distrito": "San Jeronimo", "Plaza": "Trinidad" }, "geometry": { "type": "Point", "coordinates": [ -84.011872021787298, 10.001352408246126 ] } },
+{ "type": "Feature", "properties": { "cat": 20, "Tipo": "Escuela", "Nombre": "Escuela La Isla", "Distrito": "San Vicente", "Plaza": "Liceo Moravia" }, "geometry": { "type": "Point", "coordinates": [ -84.043805365754125, 9.971609297292266 ] } }
+]
+}

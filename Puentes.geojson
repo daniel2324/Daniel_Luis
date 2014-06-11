@@ -1,0 +1,36 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "cat": 1, "Nombre": "Rio Paracito", "Tipo": "Puente", "Distrito": "San Jeronimo" }, "geometry": { "type": "Point", "coordinates": [ -84.011813249543138, 10.00635152754929 ] } },
+{ "type": "Feature", "properties": { "cat": 2, "Nombre": "Rio Agra", "Tipo": "Puente", "Distrito": "San Jeronimo" }, "geometry": { "type": "Point", "coordinates": [ -84.0171927718836, 10.010224092269871 ] } },
+{ "type": "Feature", "id": -1294967293, "properties": { "cat": 3, "Nombre": "Quebrada Tornillal", "Tipo": "Puente", "Distrito": "San Jeronimo" }, "geometry": { "type": "Point", "coordinates": [ -84.008812557285466, 10.021225410344716 ] } },
+{ "type": "Feature", "id": -294967292, "properties": { "cat": 4, "Nombre": "Quebrada Tornillal", "Tipo": "Puente", "Distrito": "San Jeronimo" }, "geometry": { "type": "Point", "coordinates": [ -84.008076410631531, 10.021393811507911 ] } },
+{ "type": "Feature", "id": 705032709, "properties": { "cat": 5, "Nombre": "Rio Para Grande", "Tipo": "Puente", "Distrito": "San Jeronimo" }, "geometry": { "type": "Point", "coordinates": [ -84.002413749743894, 10.026894393394786 ] } },
+{ "type": "Feature", "id": 1705032710, "properties": { "cat": 6, "Nombre": "Quebrada Yerbabuena", "Tipo": "Puente", "Distrito": "San Jeronimo" }, "geometry": { "type": "Point", "coordinates": [ -84.009039209843252, 10.02644525939913 ] } },
+{ "type": "Feature", "id": -1589934585, "properties": { "cat": 7, "Nombre": "Rio Para Grande", "Tipo": "Puente", "Distrito": "San Jeronimo" }, "geometry": { "type": "Point", "coordinates": [ -83.993749552954398, 10.033012235860452 ] } },
+{ "type": "Feature", "id": -589934584, "properties": { "cat": 8, "Nombre": "Rio Para Grande", "Tipo": "Puente", "Distrito": "San Jeronimo" }, "geometry": { "type": "Point", "coordinates": [ -83.994938726912039, 10.035313481181348 ] } },
+{ "type": "Feature", "id": 410065417, "properties": { "cat": 9, "Nombre": "Quebrada Yerbabuena", "Tipo": "Puente", "Distrito": "San Jeronimo" }, "geometry": { "type": "Point", "coordinates": [ -84.006321148255225, 10.030430371894616 ] } },
+{ "type": "Feature", "id": 1410065418, "properties": { "cat": 10, "Nombre": "Rio Para Grande", "Tipo": "Puente", "Distrito": "San Jeronimo" }, "geometry": { "type": "Point", "coordinates": [ -83.995051887742932, 10.041768136821158 ] } },
+{ "type": "Feature", "id": -1884901877, "properties": { "cat": 11, "Nombre": "Rio Para Grande", "Tipo": "Puente", "Distrito": "San Jeronimo" }, "geometry": { "type": "Point", "coordinates": [ -83.997373746380816, 10.041038506936058 ] } },
+{ "type": "Feature", "id": -884901876, "properties": { "cat": 12, "Nombre": "Rio Ipis", "Tipo": "Puente", "Distrito": "San Vicente" }, "geometry": { "type": "Point", "coordinates": [ -84.053539138017996, 9.965914065247153 ] } },
+{ "type": "Feature", "id": 115098125, "properties": { "cat": 13, "Nombre": "Rio Ipis", "Tipo": "Puente", "Distrito": "San Vicente" }, "geometry": { "type": "Point", "coordinates": [ -84.055508675868069, 9.965249024499057 ] } },
+{ "type": "Feature", "id": 1115098126, "properties": { "cat": 14, "Nombre": "Rio Ipis", "Tipo": "Puente", "Distrito": "San Vicente" }, "geometry": { "type": "Point", "coordinates": [ -84.056975303888819, 9.964500968416612 ] } },
+{ "type": "Feature", "id": 2115098127, "properties": { "cat": 15, "Nombre": "Rio Ipis", "Tipo": "Puente", "Distrito": "San Vicente" }, "geometry": { "type": "Point", "coordinates": [ -84.057729532463, 9.963919209588182 ] } },
+{ "type": "Feature", "id": -1179869168, "properties": { "cat": 16, "Nombre": "Rio Ipis", "Tipo": "Puente", "Distrito": "San Vicente" }, "geometry": { "type": "Point", "coordinates": [ -84.058148479317651, 9.963212872723581 ] } },
+{ "type": "Feature", "id": -179869167, "properties": { "cat": 17, "Nombre": "Rio Ipis", "Tipo": "Puente", "Distrito": "San Vicente" }, "geometry": { "type": "Point", "coordinates": [ -84.058483632547336, 9.962631184858131 ] } },
+{ "type": "Feature", "id": 820130834, "properties": { "cat": 18, "Nombre": "Rio Ipis", "Tipo": "Puente", "Distrito": "San Vicente" }, "geometry": { "type": "Point", "coordinates": [ -84.034345665176829, 9.967287574352387 ] } },
+{ "type": "Feature", "id": 1820130835, "properties": { "cat": 19, "Nombre": "Rio Ipis", "Tipo": "Puente", "Distrito": "San Vicente" }, "geometry": { "type": "Point", "coordinates": [ -84.04046412397328, 9.966829894468742 ] } },
+{ "type": "Feature", "id": -1474836460, "properties": { "cat": 20, "Nombre": "Rio Ipis", "Tipo": "Puente", "Distrito": "San Vicente" }, "geometry": { "type": "Point", "coordinates": [ -84.04624764471842, 9.968781756192186 ] } },
+{ "type": "Feature", "id": -474836459, "properties": { "cat": 21, "Nombre": "Quebrada San Francisco", "Tipo": "Puente", "Distrito": "Trinidad" }, "geometry": { "type": "Point", "coordinates": [ -84.039040002922789, 9.973020261248871 ] } },
+{ "type": "Feature", "id": 525163542, "properties": { "cat": 22, "Nombre": "Quebrada San Francisco", "Tipo": "Puente", "Distrito": "San Vicente" }, "geometry": { "type": "Point", "coordinates": [ -84.052115399849285, 9.97293538567236 ] } },
+{ "type": "Feature", "id": 1525163543, "properties": { "cat": 23, "Nombre": "Quebrada San Francisco", "Tipo": "Puente", "Distrito": "San Vicente" }, "geometry": { "type": "Point", "coordinates": [ -84.044865425212237, 9.974182787151035 ] } },
+{ "type": "Feature", "id": -1769803752, "properties": { "cat": 24, "Nombre": "Quebrada San Francisco", "Tipo": "Puente", "Distrito": "Trinidad" }, "geometry": { "type": "Point", "coordinates": [ -84.038914839908358, 9.977756398395634 ] } },
+{ "type": "Feature", "id": -769803751, "properties": { "cat": 25, "Nombre": "Quebrada San Francisco", "Tipo": "Puente", "Distrito": "Trinidad" }, "geometry": { "type": "Point", "coordinates": [ -84.034388522321905, 9.97634436802182 ] } },
+{ "type": "Feature", "id": 230196250, "properties": { "cat": 26, "Nombre": "Quebrada San Francisco", "Tipo": "Puente", "Distrito": "Trinidad" }, "geometry": { "type": "Point", "coordinates": [ -84.032167462062688, 9.977424757839749 ] } },
+{ "type": "Feature", "id": 1230196251, "properties": { "cat": 27, "Nombre": "Quebrada San Francisco", "Tipo": "Puente", "Distrito": "Trinidad" }, "geometry": { "type": "Point", "coordinates": [ -84.025965301453553, 9.981995240409969 ] } },
+{ "type": "Feature", "id": -2064771044, "properties": { "cat": 28, "Nombre": "Quebrada San Francisco", "Tipo": "Puente", "Distrito": "Trinidad" }, "geometry": { "type": "Point", "coordinates": [ -84.021690714385073, 9.984779055569501 ] } },
+{ "type": "Feature", "id": -1064771043, "properties": { "cat": 29, "Nombre": "Rio Virilla", "Tipo": "Puente", "Distrito": "Trinidad" }, "geometry": { "type": "Point", "coordinates": [ -84.025756508570694, 9.991592131090586 ] } }
+]
+}

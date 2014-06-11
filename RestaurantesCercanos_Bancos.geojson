@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "cat": 1, "Banco": "Banco Nacional", "Restaurant": "Restaurante Chef Oriental" }, "geometry": { "type": "LineString", "coordinates": [ [ -84.049656137278959, 9.962914887178673 ], [ -84.049438333145986, 9.963256876995866 ] ] } },
+{ "type": "Feature", "properties": { "cat": 2, "Banco": "Banco BCR", "Restaurant": "Restaurante Rosa del Oriente" }, "geometry": { "type": "LineString", "coordinates": [ [ -84.046823849791153, 9.961763439204258 ], [ -84.047277734838971, 9.961907357408448 ] ] } },
+{ "type": "Feature", "properties": { "cat": 3, "Banco": "Banco BCR", "Restaurant": "Restaurante KFC" }, "geometry": { "type": "LineString", "coordinates": [ [ -84.059495838081915, 9.96230135573647 ], [ -84.06073034412087, 9.962265138077974 ] ] } },
+{ "type": "Feature", "properties": { "cat": 4, "Banco": "Banco BAC", "Restaurant": "Restaurante Lan Tien" }, "geometry": { "type": "LineString", "coordinates": [ [ -84.051144755700278, 9.962518711781335 ], [ -84.050418518652805, 9.962176864653847 ] ] } }
+]
+}
